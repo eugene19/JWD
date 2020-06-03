@@ -11,7 +11,7 @@ public class DateSearch {
         if (validator.isDayInYearRange(dayNumber)) {
             return searchDate(dayNumber);
         } else {
-            throw new IllegalArgumentException("You've input invalid number.");
+            throw new IllegalArgumentException("Invalid number: " + dayNumber);
         }
     }
 
