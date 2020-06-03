@@ -1,23 +1,16 @@
 package com.epam.degtyarovea.lesson01.task7;
 
-import java.util.Scanner;
+import com.epam.degtyarovea.lesson01.task5.NumberValidator;
 
 public class NumberFormatter {
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Input number in format 'nnn.ddd': ");
-        double number = scanner.nextDouble();
+    private NumberValidator validator = new NumberValidator();
 
-        NumberFormatter formatter = new NumberFormatter();
-        formatter.printSwappedParts(number);
-    }
-
-    public void printSwappedParts(double number) {
-        if (number >= 100 && number < 1000) {
-            System.out.printf("Result: %.3f.\n", swapParts(number));
+    public double swapFractionAndInteger(double number) {
+        if (validator.hasThreeDigitInIntegerAndFractional(number)) {
+            return swapParts(number);
         } else {
-            System.out.println("Invalid format of inputted number.");
+            throw new IllegalArgumentException("Invalid number: " + number);
         }
     }
 

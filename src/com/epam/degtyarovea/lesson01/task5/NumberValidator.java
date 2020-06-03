@@ -8,4 +8,8 @@ public class NumberValidator {
     public boolean isThreeDigitNumber(int number) {
         return number >= MIN_THREE_DIGIT_NUMBER && number <= MAX_THREE_DIGIT_NUMBER;
     }
+
+    public boolean hasThreeDigitInIntegerAndFractional(double number) {
+        return number >= 100.001 && number <= 999.999;
+    }
 }
