@@ -3,18 +3,12 @@ package com.epam.degtyarovea.lesson01.task10;
 import java.util.Scanner;
 
 public class SequenceChecker {
-
     int countNumbers;
     boolean isAscending;
     boolean isSameNumbersNext;
     boolean isAlternateSign;
 
-    public static void main(String[] args) {
-        SequenceChecker sequenceChecker = new SequenceChecker();
-        sequenceChecker.process();
-    }
-
-    public void process() {
+    public void startChecking() {
         setDefaultValues();
         inputSequence();
         printSequenceInfo();
