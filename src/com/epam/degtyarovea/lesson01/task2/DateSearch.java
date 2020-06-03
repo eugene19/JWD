@@ -1,29 +1,31 @@
 package com.epam.degtyarovea.lesson01.task2;
 
-import java.util.Scanner;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class DateSearch {
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Input number of day: ");
-        int dayNumber = scanner.nextInt();
-        if (dayNumber > 0 && dayNumber <= 365) {
-            DateSearch dateSearch = new DateSearch();
-            dateSearch.searchDateByDayNumber(dayNumber);
+    private DateValidator validator = new DateValidator();
+
+    public Calendar searchDateByDayNumber(int dayNumber) {
+        if (validator.isDayInYearRange(dayNumber)) {
+            return searchDate(dayNumber);
         } else {
-            System.out.println("You've input invalid number.");
+            throw new IllegalArgumentException("You've input invalid number.");
         }
     }
 
-    private void searchDateByDayNumber(int dayNumber) {
+    private Calendar searchDate(int dayNumber) {
+        Calendar calendar = new GregorianCalendar();
         for (Month month : Month.values()) {
-            if (dayNumber <= month.getCountDays()) {
-                System.out.printf("Date is %d %s", dayNumber, month.getName());
+            if (dayNumber <= month.getDaysCount()) {
+                calendar.set(Calendar.MONTH, month.ordinal());
+                calendar.set(Calendar.DAY_OF_MONTH, dayNumber);
                 break;
             } else {
-                dayNumber -= month.getCountDays();
+                dayNumber -= month.getDaysCount();
             }
         }
+        return calendar;
     }
 }

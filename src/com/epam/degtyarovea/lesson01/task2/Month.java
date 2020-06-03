@@ -1,33 +1,26 @@
 package com.epam.degtyarovea.lesson01.task2;
 
 public enum Month {
+    JANUARY(31),
+    FEBRUARY(28),
+    MARCH(31),
+    APRIL(30),
+    MAY(31),
+    JUNE(30),
+    JULE(31),
+    AUGUST(31),
+    SEPTEMBER(30),
+    OCTOBER(31),
+    NOVEMBER(30),
+    DECEMBER(31);
 
-    JANUARY(31, "January"),
-    FEBRUARY(28, "February"),
-    MARCH(31, "March"),
-    APRIL(30, "April"),
-    MAY(31, "May"),
-    JUNE(30, "June"),
-    JULE(31, "Jule"),
-    AUGUST(31, "August"),
-    SEPTEMBER(30, "September"),
-    OCTOBER(31, "October"),
-    NOVEMBER(30, "November"),
-    DECEMBER(31, "December");
+    private int daysCount;
 
-    private int days;
-    private String name;
-
-    Month(int days, String name) {
-        this.days = days;
-        this.name = name;
+    Month(int daysCount) {
+        this.daysCount = daysCount;
     }
 
-    public int getCountDays() {
-        return days;
-    }
-
-    public String getName() {
-        return name;
+    public int getDaysCount() {
+        return daysCount;
     }
 }
