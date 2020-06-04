@@ -1,17 +1,16 @@
 package com.epam.degtyarovea.lesson01.task2;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.time.MonthDay;
 
 public class DateSearchMain {
 
     public static void main(String[] args) {
-        int dayNumber = 366;
+        int dayNumber = 32;
         DateSearch dateSearch = new DateSearch();
-        Calendar calendar = dateSearch.searchDateByDayNumber(dayNumber);
+        MonthDay monthDay = dateSearch.searchDateByDayNumber(dayNumber, false);
 
-        DateFormat dateFormat = new SimpleDateFormat("dd MMMM");
-        System.out.println(dateFormat.format(calendar.getTime()));
+        System.out.printf("Result: date is %d %s.\n",
+                monthDay.getDayOfMonth(),
+                monthDay.getMonth());
     }
 }
