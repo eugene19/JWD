@@ -1,21 +1,30 @@
 package by.epamtc.degtyarovea.lesson01.task8;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 public class Function {
 
     public static void main(String[] args) {
         double a = 1;
         double b = 18;
-        double c = 2;
-        double step = 1;
+        double c = 3;
+        double step = 4;
+        Map<Double, Double> functionValues;
+
+        functionValues = calculateOnInterval(a, b, c, step);
+        System.out.printf("Result: %s.", functionValues);
+    }
+
+    public static Map<Double, Double> calculateOnInterval(double a, double b, double c, double step) {
+        Map<Double, Double> functionValues = new TreeMap<>();
         double y;
 
         for (double x = a; x <= b; x += step) {
-            y = calculateOnInterval(x, c);
-            System.out.printf("For x = %.2f, y = %.2f.\n", x, y);
+            y = (x == 15) ? (x + c) * 2 : (x - c) + 6;
+            functionValues.put(x, y);
         }
-    }
 
-    public static double calculateOnInterval(double x, double c) {
-        return (x == 15) ? (x + c) * 2 : (x - c) + 6;
+        return functionValues;
     }
 }
