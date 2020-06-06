@@ -5,12 +5,8 @@ public class DateSearch {
     public static void main(String[] args) {
         int dayOfYear = 365;
 
-        printDayMonthByDayNumber(dayOfYear);
-    }
-
-    public static void printDayMonthByDayNumber(int day) {
-        if (isDayInYearRange(day)) {
-            DayMonth dayMonth = getDayMonthByDayNumber(day);
+        if (isDayInYearRange(dayOfYear)) {
+            DayMonth dayMonth = getDayMonthByDayNumber(dayOfYear);
             System.out.printf("Result: %s.", dayMonth);
         } else {
             System.out.println("Incorrect day of year.");
