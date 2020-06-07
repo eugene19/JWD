@@ -12,7 +12,7 @@ public class Expression {
         double result;
 
         result = calculate(a, b, c);
-        System.out.printf("Result: %.2f.\n", result);
+        System.out.printf("Result: %.2f.", result);
     }
 
     public static double calculate(double a, double b, double c) {

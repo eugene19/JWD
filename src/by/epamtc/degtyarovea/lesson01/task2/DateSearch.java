@@ -4,9 +4,10 @@ public class DateSearch {
 
     public static void main(String[] args) {
         int dayOfYear = 365;
+        DayMonth dayMonth;
 
         if (isDayInYearRange(dayOfYear)) {
-            DayMonth dayMonth = getDayMonthByDayNumber(dayOfYear);
+            dayMonth = getDayMonthByDayNumber(dayOfYear);
             System.out.printf("Result: %s.", dayMonth);
         } else {
             System.out.println("Incorrect day of year.");
@@ -44,6 +45,8 @@ public class DateSearch {
     }
 
     private static boolean isDayInYearRange(int dayNumber) {
-        return dayNumber >= 1 && dayNumber <= 365;
+        int firstDayOfYear = 1;
+        int lastDayOfYear = 365;
+        return dayNumber >= firstDayOfYear && dayNumber <= lastDayOfYear;
     }
 }
