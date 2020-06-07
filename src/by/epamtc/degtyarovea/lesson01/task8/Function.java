@@ -8,11 +8,11 @@ public class Function {
     public static void main(String[] args) {
         double a = 1;
         double b = 18;
-        double c = 3;
+        double constant = 3;
         double step = 4;
         Map<Double, Double> functionValues;
 
-        functionValues = calculateOnInterval(a, b, c, step);
+        functionValues = calculateOnInterval(a, b, constant, step);
         System.out.printf("Result: %s.", functionValues);
     }
 
