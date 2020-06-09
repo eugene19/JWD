@@ -47,6 +47,7 @@ public class DateSearch {
     private static boolean isDayInYearRange(int dayNumber) {
         int firstDayOfYear = 1;
         int lastDayOfYear = 365;
+
         return dayNumber >= firstDayOfYear && dayNumber <= lastDayOfYear;
     }
 }

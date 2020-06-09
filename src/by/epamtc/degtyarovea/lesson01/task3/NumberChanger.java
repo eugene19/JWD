@@ -19,6 +19,6 @@ public class NumberChanger {
             c = abs(c);
         }
 
-        System.out.printf("Result: a = %.2f, b = %.2f, c = %.2f\n", a, b, c);
+        System.out.printf("Result: a = %.2f, b = %.2f, c = %.2f.", a, b, c);
     }
 }

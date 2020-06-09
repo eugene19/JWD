@@ -15,6 +15,7 @@ public class NumberFormatter {
     private static double swapFractionAndInteger(double number) {
         double integer = ((int) number) / 1000.0;
         double fractional = ((int) (number * 1000)) % 1000;
+
         return integer + fractional;
     }
 

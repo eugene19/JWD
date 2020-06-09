@@ -9,7 +9,7 @@ public class Function {
         double functionValue;
 
         functionValue = getFunctionValue(x);
-        System.out.printf("Function value is %.2f\n", functionValue);
+        System.out.printf("Function value is %.2f.", functionValue);
     }
 
     public static double getFunctionValue(double x) {
