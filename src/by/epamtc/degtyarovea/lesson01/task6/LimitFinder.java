@@ -13,21 +13,36 @@ public class LimitFinder {
     }
 
     public static long findLimitForInt(int a1, int step) {
-        return find(a1, step, Integer.MIN_VALUE, Integer.MAX_VALUE);
+        int an;
+        int sn;
+        int previousSn = 0;
+        int n = 3;
+
+        while (true) {
+            an = a1 + (n - 1) * step;
+            sn = (a1 + an) * n / 2;
+            if ((sn < previousSn && step > 0) || (sn > previousSn && step < 0)) {
+                return n;
+            }
+            previousSn = sn;
+            n++;
+        }
     }
 
     public static long findLimitForLong(int a1, int step) {
-        return find(a1, step, Long.MIN_VALUE, Long.MAX_VALUE);
-    }
+        long an;
+        long sn;
+        long prevSn = 0;
+        long n = 3;
 
-    private static long find(int a1, int step, long minRange, long maxRange) {
-        double sum = 0;
-        long n = 0;
-        while (sum > minRange && sum < maxRange) {
+        while (true) {
+            an = a1 + (n - 1) * step;
+            sn = (a1 + an) * n / 2;
+            if ((sn < prevSn && step > 0) || (sn > prevSn && step < 0)) {
+                return n;
+            }
+            prevSn = sn;
             n++;
-            double an = a1 + step * (n - 1);
-            sum = (a1 + an) * n / 2;
         }
-        return n;
     }
 }
