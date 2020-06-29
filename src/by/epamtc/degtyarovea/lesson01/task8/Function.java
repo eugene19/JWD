@@ -6,8 +6,8 @@ import java.util.TreeMap;
 public class Function {
 
     public static void main(String[] args) {
-        double a = 1;
-        double b = 18;
+        double a = 12;
+        double b = 184;
         double constant = 3;
         double step = 4;
         Map<Double, Double> functionValues;
