@@ -7,18 +7,18 @@ public class DateSearch {
         DayMonth dayMonth;
 
         if (isDayInYearRange(dayOfYear)) {
-            dayMonth = getDayMonthByDayNumber(dayOfYear);
+            dayMonth = dayMonthByDayNumber(dayOfYear);
             System.out.printf("Result: %s.", dayMonth);
         } else {
             System.out.println("Incorrect day of year.");
         }
     }
 
-    private static DayMonth getDayMonthByDayNumber(int day) {
+    private static DayMonth dayMonthByDayNumber(int day) {
         DayMonth dayMonth = new DayMonth();
 
         for (int month = 1; month <= 12; month++) {
-            int daysInMonth = getDaysInMonth(month);
+            int daysInMonth = daysInMonth(month);
             if (day <= daysInMonth) {
                 dayMonth.day = day;
                 dayMonth.month = month;
@@ -30,7 +30,7 @@ public class DateSearch {
         return dayMonth;
     }
 
-    private static int getDaysInMonth(int month) {
+    private static int daysInMonth(int month) {
         switch (month) {
             case 2: // February
                 return 28;

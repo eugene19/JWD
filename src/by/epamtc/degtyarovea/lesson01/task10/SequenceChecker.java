@@ -26,7 +26,7 @@ public class SequenceChecker {
         int previousDigit = 0;
 
         while (true) {
-            int currentDigit = getNextNumber(scanner);
+            int currentDigit = nextNumber(scanner);
             if (currentDigit == 0) {
                 break;
             }
@@ -60,7 +60,7 @@ public class SequenceChecker {
         }
     }
 
-    private int getNextNumber(Scanner scanner) {
+    private int nextNumber(Scanner scanner) {
         return (scanner.hasNextInt()) ? scanner.nextInt() : 0;
     }
 }

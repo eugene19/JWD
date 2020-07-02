@@ -16,19 +16,19 @@ public class ThreeDigitsConverter {
     }
 
     public static int sumOfAllDigits(int number) {
-        return getUnits(number) + getTens(number) + getHundreds(number);
+        return units(number) + tens(number) + hundreds(number);
     }
 
     public static int multiplyOfAllDigits(int number) {
-        return getUnits(number) * getTens(number) * getHundreds(number);
+        return units(number) * tens(number) * hundreds(number);
     }
 
     public static int swapHundredsAndTens(int number) {
-        return getUnits(number) * 100 + getTens(number) * 10 + getHundreds(number);
+        return units(number) * 100 + tens(number) * 10 + hundreds(number);
     }
 
     public static int addUnitsAtBegin(int number) {
-        return getUnits(number) * 1000 + number;
+        return units(number) * 1000 + number;
     }
 
     public static boolean isThreeDigitNumber(int number) {
@@ -37,15 +37,15 @@ public class ThreeDigitsConverter {
         return number >= minThreeDigitNumber && number <= maxThreeDigitNumber;
     }
 
-    private static int getUnits(int number) {
+    private static int units(int number) {
         return number % 10;
     }
 
-    private static int getTens(int number) {
+    private static int tens(int number) {
         return number / 10 % 10;
     }
 
-    private static int getHundreds(int number) {
+    private static int hundreds(int number) {
         return number / 100 % 10;
     }
 }

@@ -8,11 +8,11 @@ public class Function {
         double x = 12.35;
         double functionValue;
 
-        functionValue = getFunctionValue(x);
+        functionValue = functionValue(x);
         System.out.printf("Function value is %.2f.", functionValue);
     }
 
-    public static double getFunctionValue(double x) {
+    public static double functionValue(double x) {
         return (x > 13) ? -3 / (x + 1) : -pow(x, 3) + 9;
     }
 }
