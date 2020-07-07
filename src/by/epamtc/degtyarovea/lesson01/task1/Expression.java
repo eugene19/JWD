@@ -1,7 +1,7 @@
 package by.epamtc.degtyarovea.lesson01.task1;
 
-import static java.lang.StrictMath.pow;
-import static java.lang.StrictMath.sqrt;
+import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
 
 public class Expression {
 
